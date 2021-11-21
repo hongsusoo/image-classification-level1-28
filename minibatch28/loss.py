@@ -57,7 +57,7 @@ class F1Loss(nn.Module):
         f1 = f1.clamp(min=self.epsilon, max=1 - self.epsilon)
         return 1 - f1.mean()
 
-
+        
 def WeightedCrossEntropyLoss():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     weight = get_class_weight().to(device, dtype=torch.float)
